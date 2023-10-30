@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="{{asset('gentelella/production/images/favicon.ico')}}" type="image/ico" />
 
-    <title>Gentelella Alela!</title>
+    <title>
+      @yield('title')
+    </title>
 
     @include('dashboard.includes.style')
     
@@ -31,6 +33,7 @@
           <div class="right_col" role="main">
             <!-- top tiles -->
             <div class="row" style="display: inline-block;" >
+              @yield('content')
             </div>
           </div>
           <!-- /page content -->
