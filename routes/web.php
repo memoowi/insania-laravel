@@ -18,7 +18,13 @@ Route::get('/', function () {
     return view('insania.base');
 });
 
+Route::get('/customer', function () {
+    return "Sorry " . Auth::user()->name . ", you are not authorized to access this page.";
+})->middleware('auth');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['admin','auth'])->name('home');
 
