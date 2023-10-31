@@ -19,6 +19,7 @@
       <ul class="nav side-menu">
         <li><a><i class="fa fa-home"></i> Dashboard </a>
         </li>
+        @if (Auth::user()->role == 1)  
         <li><a><i class="fa fa-cogs"></i> Service <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="form.html">General Form</a></li>
@@ -29,6 +30,7 @@
             <li><a href="form_buttons.html">Form Buttons</a></li>
           </ul>
         </li>
+        @endif
         <li><a><i class="fa fa-history"></i> History </a>
         </li>
       </ul>
