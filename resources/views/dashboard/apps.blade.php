@@ -32,9 +32,7 @@
           <!-- page content -->
           <div class="right_col" role="main">
             <!-- top tiles -->
-            <div class="row" style="display: inline-block;" >
               @yield('content')
-            </div>
           </div>
           <!-- /page content -->
           @include('dashboard.includes.footer')

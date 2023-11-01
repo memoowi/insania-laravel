@@ -27,10 +27,11 @@ Auth::routes();
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['admin','auth'])->name('home');
 
 Route::prefix('admin')->middleware(['auth','admin'])->name('admin.')->group(function () {
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    Route::get('/', [App\Http\Controllers\Admin\DashboardAdminController::class, 'index'])->name('index');
+    Route::get('/service/new', [App\Http\Controllers\Admin\DashboardAdminController::class, 'serviceNew'])->name('new.service');
 });
 
 Route::prefix('customer')->middleware(['auth','customer'])->name('customer.')->group(function () {
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    Route::get('/', [App\Http\Controllers\Customer\DashboardCustomerController::class, 'index'])->name('index');
 });
 
