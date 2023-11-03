@@ -35,8 +35,12 @@ class DashboardAdminController extends Controller
         $imageUrl = $body['data']['url'];
         $data = new Service();
         $data->image = $imageUrl;
-        // $data->save();        
+        $data->service_name = $request->service_name;
+        $data->price = $request->price;
 
-        echo $imageUrl;
+        $data->save();        
+
+        return redirect()->back();
+        // echo $imageUrl;
     }
 }

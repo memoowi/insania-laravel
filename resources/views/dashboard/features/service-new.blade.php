@@ -26,9 +26,21 @@ New Service
                     @method('POST')
                     @csrf
                     <div class="item form-group">
+                        <label for="service_name" class="col-form-label col-md-3 col-sm-3 label-align">service name <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input value="" required id="service_name" class="form-control" type="text" name="service_name">
+                        </div>
+                    </div>
+                    <div class="item form-group">
                         <label for="image" class="col-form-label col-md-3 col-sm-3 label-align">Image <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input value="" required id="image" class="form-control" type="file" name="image">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label for="price" class="col-form-label col-md-3 col-sm-3 label-align">price <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input value="" required id="price" class="form-control" type="number" name="price">
                         </div>
                     </div>
                     <div class="ln_solid"></div>
