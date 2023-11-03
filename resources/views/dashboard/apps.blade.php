@@ -11,9 +11,10 @@
     <title>
       @yield('title')
     </title>
-
     @include('dashboard.includes.style')
-    
+
+    @yield('css')
+
   </head>
 
   <body class="nav-md">
@@ -38,7 +39,8 @@
           @include('dashboard.includes.footer')
         </div>
       </div>
-      @include('dashboard.includes.js')
     </div>
+    @include('dashboard.includes.js')
+    @yield('js')
   </body>
 </html>

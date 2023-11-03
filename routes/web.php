@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->name('admin.')->group(func
     Route::get('/', [App\Http\Controllers\Admin\DashboardAdminController::class, 'index'])->name('index');
     Route::get('/service/new', [App\Http\Controllers\Admin\DashboardAdminController::class, 'serviceNew'])->name('new.service');
     Route::post('/service/save', [App\Http\Controllers\Admin\DashboardAdminController::class, 'serviceSave'])->name('save.service');
+    Route::get('/service', [App\Http\Controllers\Admin\DashboardAdminController::class, 'service'])->name('service');
 });
 
 Route::prefix('customer')->middleware(['auth','customer'])->name('customer.')->group(function () {

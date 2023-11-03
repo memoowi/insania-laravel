@@ -33,14 +33,24 @@ class DashboardAdminController extends Controller
 
         $body = json_decode($response->getBody(), true);
         $imageUrl = $body['data']['url'];
+
         $data = new Service();
         $data->image = $imageUrl;
         $data->service_name = $request->service_name;
         $data->price = $request->price;
+        $data->save();  
+        
+        // $data = $request->all();
+        // $data['image'] = $imageUrl;
+        // Service::create($data);
 
-        $data->save();        
-
-        return redirect()->back();
+        return redirect()->route('admin.service')->with('success', 'Service created successfully');
         // echo $imageUrl;
+    }
+    public function service()
+    {
+        return view('dashboard.features.service', [
+            'services' => Service::all()
+        ]);
     }
 }

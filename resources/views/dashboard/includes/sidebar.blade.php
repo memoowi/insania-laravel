@@ -23,7 +23,7 @@
         <li><a><i class="fa fa-cogs"></i> Service <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{ route('admin.new.service') }}">New Service</a></li>
-            <li><a href="form_advanced.html">Advanced Components</a></li>
+            <li><a href="{{ route('admin.service')}}">View Services</a></li>
           </ul>
         </li>
         @endif
