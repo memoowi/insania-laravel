@@ -22,28 +22,15 @@ New Service
             </div>
             <div class="x_content">
                 <br>
-                <form method="post" action="https://task.febryann.my.id/m/class/select/save">
-                    <input type="hidden" name="_token" value="SWG0jDrVnLCvkWfxVZpZlisuAq7sDcYJ4ImyKLxJ">                    <div class="item form-group">
-                        <label for="kelas_id" class="col-form-label col-md-3 col-sm-3 label-align">Kelas <span class="required">*</span></label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <select id="kelas_id" required class="form-control " name="kelas_id">
-                                <option value="">-- Pilih Kelas --</option>
-                                                                                                        <option value="1" disabled>IKH-WEB-TRPL-A (Febryan)</option>
-                                                                                                        <option value="2" >IKH-WEB-TRPL-B (Naufal Aziz)</option>
-                                                                                                        <option value="3" >AKH-WEB-TRPL-A (Dila Nur Sakinah)</option>
-                                                                                                        <option value="4" >IKH-TRMG (Muhammad derry oktaviandi)</option>
-                                                                                                        <option value="5" >IKH-TRKJ (Ari Ramadhan)</option>
-                                                                                                        <option value="6" >AKH-TRKJ (Sandra Murcia Sani)</option>
-                                                                                                        <option value="7" >AKH-TRMG (Rosalina Saputri)</option>
-                                                            </select>
-                                                    </div>
-                    </div>
+                <form method="post" action="{{ route('admin.save.service') }}" enctype="multipart/form-data">
+                    @method('POST')
+                    @csrf
                     <div class="item form-group">
-                        <label for="kode_akses" class="col-form-label col-md-3 col-sm-3 label-align">Kode Akses <span class="required">*</span></label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <input value="" required id="kode_akses" class="form-control " name="kode_akses">
-                                                    </div>
-                    </div> 
+                        <label for="image" class="col-form-label col-md-3 col-sm-3 label-align">Image <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input value="" required id="image" class="form-control" type="file" name="image">
+                        </div>
+                    </div>
                     <div class="ln_solid"></div>
                     <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3 text-center">
@@ -51,6 +38,7 @@ New Service
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>
